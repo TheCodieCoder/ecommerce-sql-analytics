@@ -8,30 +8,42 @@ TABLES: Customers ( customer_id INT PK, name VARCHAR),
         Order_Items (item_id INT PK, order_id INT FK, product_name VARCHAR,                         amount INT)
 
 **KEY QUERIES & INSIGHTS**
-1. Customers with no Orders
-   - Using *Left Join*, identified customers who never ordered
-   Insights: Helps target inactive users for engagement campaigns
+1. Customers with No Orders
+Utilize LEFT JOIN to find customers who have never made any order
+Insight: This will help target these customers for engagement strategies
 
-2. Total Spending per customer
-   - Using *Joins* & *Group By* clause, evaluated customer-wise total amount spend
-   Insights: Reavealed high-value customers contributing most to revenue
+2. Total Spending per Customer
+Utilize JOIN and GROUP BY to find total spending by each customer
+Insight: This will help find high-value customers who are contributing the most to overall revenue
 
-3. Top 2 highest-spending customers
-   - Using *Inner Join*, *Group By* & *Order By*, got top 2 customers contributing the most to revenue
-   Insights: Useful for loyalty programs and premium targeting
+3. Top 2 Highest Spending Customers
+Utilize ranking based on total spending using aggregation and sorting
+Insight: This can be useful for loyalty program strategies
 
-4. Average order value
-   - Using *Aggregate Functions* & *Subqueries*, evaluated Average order value
-   Insights: Helps understand typical customer purchase behaviour
+4. Average Order Value
+Utilize subqueries to find average of total order values
+Insight: This will help understand average order value behavior by customers
 
-5. Revenue per order
-   - Using *Group By*, calculated total revenue for each order
-   Insights: Useful to indentify high-value transactions
+5. Revenue per Order
+Utilize aggregation to find total revenue per order
+Insight: This will help find high-value orders
 
 6. Ranking Orders per Customer
-  - Using *Window Functions* & *Sub-query* logic, implemented system to rank orders per customer
-Insights: Useful to know, where a user spend the most
+Utilize DENSE_RANK() with PARTITION BY to rank orders for each customer
+Insight: This will help understand customer order behavior and find the highest value order for each customer
 
-7. Customers with total spent more than overall average spent
-   - Using *Sub-query* logic, evaluated customers who spent more than overall average
-   Insights: Useful to know customers contributing more than average to revenue
+7. Customers Spending Above Average
+Utilize subqueries to find customers spending more than average
+
+**TOOLS USED**
+MySQL
+
+**SKILLS DEMONSTRATED**
+- SQL Joins (INNER, LEFT)
+- Aggregation (SUM, AVG, GROUP BY)
+- Subqueries (nested queries)
+- Window Functions (DENSE_RANK, PARTITION BY)
+- Data analysis and business insight generation
+
+**CONCLUSION**
+This project demonstrates how raw transactional data can be transformed into actionable business insights using SQL.
